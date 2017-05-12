@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Maio-2017 às 18:14
--- Versão do servidor: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: 13-Maio-2017 às 01:43
+-- Versão do servidor: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -62,7 +62,7 @@ CREATE TABLE `cursos` (
 --
 
 INSERT INTO `cursos` (`cur_id`, `cur_nome`, `cur_categoria`, `cur_privacidade`, `cur_email_criador`, `cur_descricao`, `cur_preco`, `cur_duracao`, `cur_nivel`) VALUES
-(3, 'Teste', 'Java', 'Publico', 'teste@teste.com', 'Curso Teste', '500', '220', 'Basico');
+(5, 'Curso Java 2', 'Java', 'Publico', 'lucas@email.com', 'Curso AvanÃ§ado de Java', '500', '30', 'Avancado');
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ INSERT INTO `cursos` (`cur_id`, `cur_nome`, `cur_categoria`, `cur_privacidade`, 
 --
 
 CREATE TABLE `niveis` (
-  `niv_nome` varchar(255) CHARACTER SET latin1 NOT NULL
+  `niv_nome` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
 
 --
@@ -79,9 +79,9 @@ CREATE TABLE `niveis` (
 --
 
 INSERT INTO `niveis` (`niv_nome`) VALUES
-('Basico'),
-('Intermediario'),
-('Avancado');
+('Básico'),
+('Intermediário'),
+('Avançado');
 
 -- --------------------------------------------------------
 
@@ -98,7 +98,7 @@ CREATE TABLE `privacidades` (
 --
 
 INSERT INTO `privacidades` (`pri_nome`) VALUES
-('Publico'),
+('Público'),
 ('Privado');
 
 --
@@ -119,7 +119,7 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT for table `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `cur_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cur_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
